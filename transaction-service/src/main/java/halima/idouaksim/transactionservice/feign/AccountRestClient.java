@@ -11,7 +11,9 @@ import java.util.UUID;
 @FeignClient(name = "account-service")
 public interface AccountRestClient {
     @GetMapping("/accounts/{id}")
-    @CircuitBreaker(name = "accountService")
+    @CircuitBreaker(name="accountService", fallbackMethod = "getDefaultaccount")
     Account getAccountssById(@PathVariable UUID id);
 
+    default Account getDefaultaccount(UUID id, Exception e) {
+        return new Account(id,Long.parseLong("0"),"No status","no currency",0.00);    }
 }
