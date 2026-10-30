@@ -26,7 +26,7 @@ public class TransactionServiceApplication {
 
                     transactionService.save(
                             Transaction.builder()
-                                    .accountId(UUID.fromString("PUT-ACTIVE-ACCOUNT-UUID-HERE"))
+                                    .accountId(UUID.fromString("1407a4ec-876c-432b-ac13-10b0777b826f"))
                                     .amount(BigDecimal.valueOf(100 + Math.random() * 800))
                                     .currency("MAD")
                                     .merchantCategory(
