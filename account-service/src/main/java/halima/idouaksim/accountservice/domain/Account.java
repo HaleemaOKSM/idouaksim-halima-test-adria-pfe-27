@@ -12,7 +12,7 @@ import java.util.UUID;
 public class Account {
     @Id @GeneratedValue
     private UUID id;
-    private String customerReference;
+    private Long customerReference;
     private String status;
     private String currency;
     private double balance;
